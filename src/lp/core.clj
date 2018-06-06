@@ -1,4 +1,4 @@
-(ns lp.core
+(ns trablp-clojure.core
   (:gen-class))
 
 (defn -main
