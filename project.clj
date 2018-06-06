@@ -1,8 +1,6 @@
-(defproject lp "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
+(defproject lp "0.1.0"
+  :description "Trabalho de LP"
   :url "http://example.com/FIXME"
-  :license {:name "Eclipse Public License"
-            :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]]
   :main ^:skip-aot lp.core
   :target-path "target/%s"
