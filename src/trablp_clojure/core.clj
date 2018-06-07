@@ -6,5 +6,5 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (trablp-clojure.fileio/tes)
+  (trablp-clojure.fileio/le_catalogo "test.txt")
 )
