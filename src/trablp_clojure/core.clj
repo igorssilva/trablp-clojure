@@ -1,10 +1,10 @@
 (ns trablp-clojure.core
-  (require trablp-clojure.fileio)
+  (:require [trablp-clojure.fileio :as io])
   (:gen-class))
 
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (trablp-clojure.fileio/le_catalogo "test.txt")
+  (io/le_catalogo "test.txt")
 )
