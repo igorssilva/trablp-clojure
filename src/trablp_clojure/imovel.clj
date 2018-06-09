@@ -1,13 +1,8 @@
 (ns trablp-clojure.imovel
     (:gen-class))
 
-(def ^:const ARGILOSO "G")
-(def ^:const ARENOSO "A")
-(def ^:const ROCHOSO "R")
-
 (defprotocol Imovel
-    (area [this])
-    (preco [this]))
+    "Protocolo para implementação de métodos os imoveis"
+    (area [this] "Retorna a área do imovel")
+    (preco [this] "Retorna o preço do imovel"))
 
-(defn fator-lazer [lazer]
-    (if lazer 1.15 1.0))
