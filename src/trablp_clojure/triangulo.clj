@@ -4,8 +4,10 @@
 
 (defrecord Triangulo [id nome solo preco-mq base altura] 
     imovel/Imovel
-    (imovel/area [this] (/ (* base altura) 2))
-    (imovel/preco [this] (* preco-mq (imovel/area this) (terreno/fator-terreno solo)))
+    terreno/Terreno
+    (area [this] (/ (* base altura) 2))
+    (preco [this] (* preco-mq (imovel/area this) (terreno/fator-terreno solo)))
+    (get-solo [this] (:solo this))
     )
 
 (defn new-triangulo [id nome solo preco-mq base altura] "Inicializa um novo Triangulo"

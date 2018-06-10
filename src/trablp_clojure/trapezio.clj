@@ -4,8 +4,10 @@
 
 (defrecord Trapezio [id nome solo preco-mq base1 base2 altura] 
     imovel/Imovel
-    (imovel/area [this] (/ (* (+ base1 base2) altura) 2))
-    (imovel/preco [this] (* preco-mq (imovel/area this) (terreno/fator-terreno solo)))
+    terreno/Terreno
+    (area [this] (/ (* (+ base1 base2) altura) 2))
+    (preco [this] (* preco-mq (imovel/area this) (terreno/fator-terreno solo)))
+    (get-solo [this] (:solo this))
 )
 
 (defn new-trapezio [id nome solo preco-mq base1 base2 altura] "Inicializa um novo trapezio"

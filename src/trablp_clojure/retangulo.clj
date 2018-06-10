@@ -6,8 +6,10 @@
 
 (defrecord Retangulo [id nome solo preco-mq lado1 lado2] 
     imovel/Imovel
+    terreno/Terreno
     (area [this] (* lado1 lado2))
     (preco [this] (* preco-mq (imovel/area this) (terreno/fator-terreno solo)))
+    (get-solo [this] (:solo this))
 )
 
 (defn new-retangulo [id nome solo preco-mq lado1 lado2] "Inicializa um retangulo"

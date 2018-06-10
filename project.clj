@@ -1,8 +1,5 @@
-(defproject trablp-clojure "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "Eclipse Public License"
-            :url "http://www.eclipse.org/legal/epl-v10.html"}
+(defproject trablp-clojure "1.0"
+  :description "Programa para ler e manipular arquivos sobre imoveis"
   :dependencies [[org.clojure/clojure "1.8.0"]]
   :plugins [[lein-codox "0.10.3"]]
   :main trablp-clojure.core
