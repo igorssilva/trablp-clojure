@@ -2,7 +2,7 @@
     (:require [trablp-clojure.imovel :as imovel])
 )
 
-(defrecord Casa [nome id quartos vagas pavimentos area-pavimento preco-mq-construido area-livre preco-mq-livre] 
+(defrecord Casa [id nome quartos vagas pavimentos area-pavimento preco-mq-construido area-livre preco-mq-livre] 
     imovel/Imovel
     (area [this] (* pavimentos area-pavimento))
     (preco [this] (+ (* preco-mq-construido area-pavimento pavimentos) (* preco-mq-livre area-livre))))
