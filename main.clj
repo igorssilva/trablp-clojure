@@ -1,9 +1,10 @@
-(ns trablp-clojure.main
+(ns main
     (:require [trablp-clojure.fileio :as io])
     (:require [trablp-clojure.imovel :as imovel])
     (:require [trablp-clojure.terreno :as terreno])
     (:require [trablp-clojure.casa :as casa])
     (:gen-class))
+
 
     ;le o catalogo
     (def imoveis (io/le-catalogo "catalogo.txt"))  

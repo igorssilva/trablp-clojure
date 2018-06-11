@@ -74,8 +74,8 @@
 )
 
 (defn compare-files [entrada saida]
-    (def entrada-c (slurp entrada))
-    (def saida-c (slurp saida))
+    (def entrada-c (string/replace (slurp entrada) #"\r" ""))
+    (def saida-c (string/replace (slurp saida) #"\r" ""))
     
     (= entrada-c saida-c)    
 )

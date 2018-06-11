@@ -1,11 +1,12 @@
-(ns main2
+(ns trablp-clojure.core
     (:require [trablp-clojure.fileio :as io])
     (:require [trablp-clojure.imovel :as imovel])
     (:require [trablp-clojure.terreno :as terreno])
     (:require [trablp-clojure.casa :as casa])
     (:gen-class))
 
-(doseq [x (range 1 16)]
+(defn -main [& args]
+    (doseq [x (range 1 16)]
         ;le o catalogo
         (def imoveis (io/le-catalogo (str "resources/" (str x) "/catalogo.txt")))  
         ;atualiza o catalogo
@@ -28,7 +29,8 @@
         ;escreve as listas de ids no arquivo saida
         (io/esc-string "saida.txt" (str (imovel/list-id-comma (:lista imoveis-caros-set)) (imovel/list-id-comma (:lista menores-arg-set)) (imovel/list-id-comma (:lista casas-area-preco-set ))))
 
-
+        (println (str x))
         (println "result" (io/compare-files "result.txt" (str "resources/" (str x) "/result.txt")))
 +       (println "saida" (io/compare-files "saida.txt" (str "resources/" (str x) "/saida.txt")))
+    )
 )
