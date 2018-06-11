@@ -3,8 +3,9 @@
     (:require [trablp-clojure.terreno :as terreno])
     (:gen-class))
 
-
-(defrecord Retangulo [id nome solo preco-mq lado1 lado2] 
+;classe do terreno retangular
+(defrecord Retangulo 
+    [id nome solo preco-mq lado1 lado2] 
     imovel/Imovel
     terreno/Terreno
     (area [this] (* lado1 lado2))
@@ -12,7 +13,9 @@
     (get-solo [this] (:solo this))
 )
 
-(defn new-retangulo [id nome solo preco-mq lado1 lado2] "Inicializa um retangulo"
+(defn new-retangulo 
+    [id nome solo preco-mq lado1 lado2] 
+    "Inicializa um retangulo"
     (Retangulo. 
         (Integer/parseInt id) 
         nome 

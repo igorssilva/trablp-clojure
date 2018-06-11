@@ -2,7 +2,9 @@
     (:require [trablp-clojure.imovel :as imovel])
     (:require [trablp-clojure.terreno :as terreno]))
 
-(defrecord Trapezio [id nome solo preco-mq base1 base2 altura] 
+;classe do terreno trapezodial
+(defrecord Trapezio 
+    [id nome solo preco-mq base1 base2 altura] 
     imovel/Imovel
     terreno/Terreno
     (area [this] (/ (* (+ base1 base2) altura) 2))
@@ -10,7 +12,9 @@
     (get-solo [this] (:solo this))
 )
 
-(defn new-trapezio [id nome solo preco-mq base1 base2 altura] "Inicializa um novo trapezio"
+(defn new-trapezio 
+    [id nome solo preco-mq base1 base2 altura] 
+    "Inicializa um novo trapezio"
     (Trapezio. 
         (Integer/parseInt id) 
         nome 

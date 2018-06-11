@@ -9,6 +9,7 @@
 )
 
 (defn get-id [item]
+    "retorna o id do item"
     (:id item)
 )
 
@@ -45,7 +46,8 @@
 
 
 (defn list-id-comma [imoveis]
-    (if (empty? imoveis) (str "\r\n")
-        (str (join ", " (map :id imoveis)) "\r\n")
+    "retorna uma string de ids separados por virgulas com a quebra de linha no final"
+    (if (empty? imoveis) (str "\n")
+        (str (join ", " (map :id imoveis)) "\n")
     )
 )

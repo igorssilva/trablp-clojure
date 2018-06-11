@@ -2,7 +2,9 @@
     (:require [trablp-clojure.imovel :as imovel])
     (:require [trablp-clojure.terreno :as terreno]))
 
-(defrecord Triangulo [id nome solo preco-mq base altura] 
+;classe do terreno triangular
+(defrecord Triangulo 
+    [id nome solo preco-mq base altura] 
     imovel/Imovel
     terreno/Terreno
     (area [this] (/ (* base altura) 2))
@@ -10,7 +12,9 @@
     (get-solo [this] (:solo this))
     )
 
-(defn new-triangulo [id nome solo preco-mq base altura] "Inicializa um novo Triangulo"
+(defn new-triangulo
+    [id nome solo preco-mq base altura]
+    "Inicializa um novo Triangulo"
     (Triangulo. 
         (Integer/parseInt id)
         nome 

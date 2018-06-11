@@ -29,6 +29,7 @@
 )
 
 (defn le-catalogo [caminho] 
+    "le o catalogo inicial"
     (def imoveis-str (le-linhas caminho))
     (def imoveis (map #(inicia-imovel %) imoveis-str))
     (zipmap (map :id imoveis) imoveis)
@@ -36,6 +37,7 @@
 
 
 (defn atualiza-catalogo [caminho imoveis]
+    "atualiza o catalogo"
     (def imoveis-str (le-linhas caminho))
     (def imoveis-local imoveis)
     (doseq [item imoveis-str]
@@ -50,6 +52,7 @@
 )
 
 (defn le-espec [caminho]
+    "le as especificacoes para o relatório"
     (def conteudo (string/replace (slurp caminho) #"\r" ""))
     (def espec-vec (vec (string/split conteudo #"\n")))   
     {
@@ -65,7 +68,8 @@
 
 (use 'clojure.java.io)
 
-(defn esc-string [caminho str]    
+(defn esc-string [caminho str]
+    "escreve uma string no caminho especificado"
     (spit caminho str)
 )
 
@@ -73,7 +77,6 @@
     (def entrada-c (slurp entrada))
     (def saida-c (slurp saida))
     
-    (= entrada-c saida-c)
-    
+    (= entrada-c saida-c)    
 )
 
